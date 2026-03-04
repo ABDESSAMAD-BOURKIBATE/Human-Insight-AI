@@ -38,7 +38,15 @@
             </div>
 
             <h1 class="landing-title" id="landingTitle">
-                <span class="title-letter" style="--i:0">H</span><span class="title-letter" style="--i:1">u</span><span class="title-letter" style="--i:2">m</span><span class="title-letter" style="--i:3">a</span><span class="title-letter" style="--i:4">n</span><span class="title-letter title-space" style="--i:5"> </span><span class="title-letter" style="--i:6">I</span><span class="title-letter" style="--i:7">n</span><span class="title-letter" style="--i:8">s</span><span class="title-letter" style="--i:9">i</span><span class="title-letter" style="--i:10">g</span><span class="title-letter" style="--i:11">h</span><span class="title-letter" style="--i:12">t</span><span class="title-letter title-space" style="--i:13"> </span><span class="title-letter title-ai" style="--i:14">A</span><span class="title-letter title-ai" style="--i:15">I</span>
+                <span class="title-letter" style="--i:0">H</span><span class="title-letter" style="--i:1">u</span><span
+                    class="title-letter" style="--i:2">m</span><span class="title-letter" style="--i:3">a</span><span
+                    class="title-letter" style="--i:4">n</span><span class="title-letter title-space" style="--i:5">
+                </span><span class="title-letter" style="--i:6">I</span><span class="title-letter"
+                    style="--i:7">n</span><span class="title-letter" style="--i:8">s</span><span class="title-letter"
+                    style="--i:9">i</span><span class="title-letter" style="--i:10">g</span><span class="title-letter"
+                    style="--i:11">h</span><span class="title-letter" style="--i:12">t</span><span
+                    class="title-letter title-space" style="--i:13"> </span><span class="title-letter title-ai"
+                    style="--i:14">A</span><span class="title-letter title-ai" style="--i:15">I</span>
             </h1>
             <p class="landing-subtitle" data-i18n="landing_subtitle">نظام ذكاء اصطناعي معرفي متقدم</p>
 
@@ -48,7 +56,8 @@
                     <img src="./assets/ibm-brand.png" alt="IBM Logo" class="badge-ibm-logo">
                 </div>
                 <div class="badge-text-container">
-                    <span class="badge-label" data-i18n="landing_badge">مشروع مشارك في IBM Dev Day: AI Demystified</span>
+                    <span class="badge-label" data-i18n="landing_badge">مشروع مشارك في IBM Dev Day: AI
+                        Demystified</span>
                     <span class="badge-sub">Hackathon 2026</span>
                 </div>
             </div>
@@ -61,9 +70,12 @@
 
             <!-- Features mini bar -->
             <div class="landing-features-bar">
-                <div class="landing-feature-chip"><i class="ph-bold ph-brain"></i> <span data-i18n="landing_feat_intent">تحليل النية</span></div>
-                <div class="landing-feature-chip"><i class="ph-bold ph-heart"></i> <span data-i18n="landing_feat_emotion">اكتشاف المشاعر</span></div>
-                <div class="landing-feature-chip"><i class="ph-bold ph-translate"></i> <span data-i18n="landing_feat_lang">متعدد اللغات</span></div>
+                <div class="landing-feature-chip"><i class="ph-bold ph-brain"></i> <span
+                        data-i18n="landing_feat_intent">تحليل النية</span></div>
+                <div class="landing-feature-chip"><i class="ph-bold ph-heart"></i> <span
+                        data-i18n="landing_feat_emotion">اكتشاف المشاعر</span></div>
+                <div class="landing-feature-chip"><i class="ph-bold ph-translate"></i> <span
+                        data-i18n="landing_feat_lang">متعدد اللغات</span></div>
             </div>
         </div>
     </div>
@@ -146,6 +158,12 @@
                 <button class="nav-item" id="themeBtn" title="تبديل المظهر">
                     <i class="ph-fill ph-sun nav-icon" id="themeIcon"></i>
                     <span data-i18n="nav_theme">تبديل المظهر</span>
+                </button>
+
+                <!-- ★ Server Config Button -->
+                <button class="nav-item" id="serverSettingsBtn" title="إعدادات الخادم (Ngrok)">
+                    <i class="ph-fill ph-plugs-connected nav-icon"></i>
+                    <span data-i18n="nav_server_settings">إعدادات الخادم (Ngrok)</span>
                 </button>
 
                 <!-- ★ Language Toggle inside sidebar -->
@@ -730,8 +748,8 @@
                             <h3><i class="ph-fill ph-certificate" style="font-size:18px"></i> <span
                                     data-i18n="about_cert_title">الشهادات</span></h3>
                             <div class="certificate-card">
-                                <img src="./assets/ibm_certificate.jpg"
-                                    alt="IBM Dev Day: AI Demystified Certificate" class="certificate-img">
+                                <img src="./assets/ibm_certificate.jpg" alt="IBM Dev Day: AI Demystified Certificate"
+                                    class="certificate-img">
                                 <div class="certificate-info">
                                     <h4>IBM Dev Day: AI Demystified</h4>
                                     <p data-i18n="about_cert_type">شهادة مشاركة</p>
@@ -752,6 +770,33 @@
             </div>
 
         </main>
+    </div>
+
+    <!-- Server Settings Modal -->
+    <div class="modal-overlay" id="serverSettingsModal"
+        style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.6); z-index:9999; align-items:center; justify-content:center;">
+        <div class="modal-content"
+            style="background:var(--bg-panel); border:1px solid var(--border-color); border-radius:16px; width:400px; max-width:90%; padding:24px; box-shadow:var(--shadow-lg);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                <h3 style="margin:0; font-size:18px; color:var(--text-main);" data-i18n="server_modal_title">إعدادات
+                    الخادم (Ngrok)</h3>
+                <button id="closeServerModal"
+                    style="background:none; border:none; color:var(--text-muted); cursor:pointer;"><i
+                        class="ph-bold ph-x" style="font-size:20px;"></i></button>
+            </div>
+            <p style="font-size:14px; color:var(--text-muted); margin-bottom:16px; line-height:1.5;">أدخل رابط الخادم
+                المخصص (مثل رابط Ngrok) في حال تشغيل الواجهة المستضافة عن بعد.</p>
+            <input type="url" id="serverUrlInput" placeholder="https://abc.ngrok-free.app"
+                style="width:100%; padding:12px 14px; background:var(--bg-input); border:1px solid var(--border-color); border-radius:8px; color:var(--text-main); font-family:var(--font-mono); font-size:14px; margin-bottom:16px; box-sizing:border-box;">
+            <div style="display:flex; justify-content:flex-end; gap:10px;">
+                <button id="resetServerBtn"
+                    style="padding:10px 16px; background:transparent; border:1px solid var(--border-color); color:var(--text-main); border-radius:8px; cursor:pointer;"
+                    data-i18n="btn_local">استعادة (Localhost)</button>
+                <button id="saveServerBtn"
+                    style="padding:10px 16px; background:var(--accent-glow); color:var(--text-on-accent); border:none; border-radius:8px; cursor:pointer; font-weight:600;"
+                    data-i18n="btn_save">حفظ الاتصال</button>
+            </div>
+        </div>
     </div>
 
     <script src="./app.js"></script>
