@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Human Insight AI — Advanced Cognitive Language System that understands human intent, emotion, and context.">
+    <title>Human Insight AI — Cognitive Intelligence</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z'/><path d='M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z'/><path d='M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4'/><path d='M17.599 6.5a3 3 0 0 0 .399-1.375'/><path d='M6.003 5.125A3 3 0 0 0 6.401 6.5'/><path d='M3.477 10.896a4 4 0 0 1 .585-.396'/><path d='M19.938 10.5a4 4 0 0 1 .585.396'/><path d='M6 18a4 4 0 0 1-1.967-.516'/><path d='M19.967 17.484A4 4 0 0 1 18 18'/></svg>">
+    <!-- Phosphor Icons — Bold style for premium feel -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- ─── Pre-entrance Landing Page ────────────────────── -->
+    <div id="landing-page" class="landing-page">
+        <!-- Animated particles background -->
+        <div class="landing-particles" id="landingParticles"></div>
+
+        <!-- Decorative orbit rings -->
+        <div class="landing-orbits">
+            <div class="orbit orbit-1"></div>
+            <div class="orbit orbit-2"></div>
+            <div class="orbit orbit-3"></div>
+        </div>
+
+        <div class="landing-content">
+            <!-- Version tag removed -->
+
+            <div class="landing-logo-container">
+                <div class="logo-glow"></div>
+                <div class="logo-ring"></div>
+                <img src="/static/assets/logo.png" alt="Human Insight AI Logo" class="landing-logo">
+            </div>
+
+            <h1 class="landing-title" id="landingTitle">
+                <span class="title-letter" style="--i:0">H</span><span class="title-letter" style="--i:1">u</span><span class="title-letter" style="--i:2">m</span><span class="title-letter" style="--i:3">a</span><span class="title-letter" style="--i:4">n</span><span class="title-letter title-space" style="--i:5"> </span><span class="title-letter" style="--i:6">I</span><span class="title-letter" style="--i:7">n</span><span class="title-letter" style="--i:8">s</span><span class="title-letter" style="--i:9">i</span><span class="title-letter" style="--i:10">g</span><span class="title-letter" style="--i:11">h</span><span class="title-letter" style="--i:12">t</span><span class="title-letter title-space" style="--i:13"> </span><span class="title-letter title-ai" style="--i:14">A</span><span class="title-letter title-ai" style="--i:15">I</span>
+            </h1>
+            <p class="landing-subtitle" data-i18n="landing_subtitle">نظام ذكاء اصطناعي معرفي متقدم</p>
+
+            <!-- IBM Badge — bigger and more prominent -->
+            <div class="landing-badge">
+                <div class="badge-ibm-container">
+                    <img src="/static/assets/ibm-brand.png" alt="IBM Logo" class="badge-ibm-logo">
+                </div>
+                <div class="badge-text-container">
+                    <span class="badge-label" data-i18n="landing_badge">مشروع مشارك في IBM Dev Day: AI Demystified</span>
+                    <span class="badge-sub">Hackathon 2026</span>
+                </div>
+            </div>
+
+            <button id="start-btn" class="landing-btn">
+                <span class="landing-btn-text" data-i18n="landing_btn">ابدأ التجربة</span>
+                <i class="ph-bold ph-arrow-left"></i>
+                <div class="btn-shine"></div>
+            </button>
+
+            <!-- Features mini bar -->
+            <div class="landing-features-bar">
+                <div class="landing-feature-chip"><i class="ph-bold ph-brain"></i> <span data-i18n="landing_feat_intent">تحليل النية</span></div>
+                <div class="landing-feature-chip"><i class="ph-bold ph-heart"></i> <span data-i18n="landing_feat_emotion">اكتشاف المشاعر</span></div>
+                <div class="landing-feature-chip"><i class="ph-bold ph-translate"></i> <span data-i18n="landing_feat_lang">متعدد اللغات</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="mesh-bg">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+        <div class="mesh-blob blob-4"></div>
+    </div>
+
+    <div class="app">
+        <!-- ─── Mobile Menu Button ─────────────────────── -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح القائمة">
+            <i class="ph-bold ph-list" id="mobileMenuIcon"></i>
+        </button>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- ─── Sidebar ───────────────────────────────────── -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="header-logo"><img src="/static/assets/logo.png" alt="Logo"></div>
+                <div class="sidebar-title-container">
+                    <div class="header-title">Human Insight AI</div>
+                    <div class="header-subtitle" data-i18n="header_subtitle">منصة بحث أكاديمية</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <!-- Main Section -->
+                <div class="nav-section-label"><i class="ph-bold ph-squares-four nav-section-icon"></i><span
+                        data-i18n="nav_main">الرئيسية</span></div>
+
+                <button class="nav-item active" data-panel="chat" title="محادثة ذكية">
+                    <i class="ph-fill ph-chats-teardrop nav-icon"></i>
+                    <span data-i18n="nav_chat">محادثة ذكية</span>
+                    <div class="nav-item-badge" data-i18n="badge_ai">ذ.إ</div>
+                </button>
+
+                <button class="nav-item" data-panel="lab" title="المختبر">
+                    <i class="ph-fill ph-flask nav-icon"></i>
+                    <span data-i18n="nav_lab">المختبر</span>
+                    <div class="nav-item-badge new" data-i18n="badge_new">جديد</div>
+                </button>
+
+
+                <!-- Academic Section -->
+                <div class="nav-section-label"><i class="ph-bold ph-graduation-cap nav-section-icon"></i><span
+                        data-i18n="nav_academic">أكاديمي</span></div>
+
+                <button class="nav-item" data-panel="sessions" title="الجلسات">
+                    <i class="ph-fill ph-calendar-dots nav-icon"></i>
+                    <span data-i18n="nav_sessions">الجلسات</span>
+                </button>
+
+                <button class="nav-item" data-panel="tables" title="الجداول">
+                    <i class="ph-fill ph-table nav-icon"></i>
+                    <span data-i18n="nav_tables">الجداول</span>
+                </button>
+
+                <button class="nav-item" data-panel="analysis" title="التحليل و الرسوميات">
+                    <i class="ph-fill ph-chart-bar nav-icon"></i>
+                    <span data-i18n="nav_analysis">تحليل و رسوميات</span>
+                </button>
+
+                <button class="nav-item" data-panel="proofs" title="البراهين">
+                    <i class="ph-fill ph-seal-check nav-icon"></i>
+                    <span data-i18n="nav_proofs">البراهين</span>
+                </button>
+
+                <button class="nav-item" data-panel="study" title="الدراسة">
+                    <i class="ph-fill ph-book-open-text nav-icon"></i>
+                    <span data-i18n="nav_study">الدراسة</span>
+                </button>
+
+                <!-- System Section -->
+                <div class="nav-section-label"><i class="ph-bold ph-gear-six nav-section-icon"></i><span
+                        data-i18n="nav_system">النظام</span>
+                </div>
+
+                <button class="nav-item" id="themeBtn" title="تبديل المظهر">
+                    <i class="ph-fill ph-sun nav-icon" id="themeIcon"></i>
+                    <span data-i18n="nav_theme">تبديل المظهر</span>
+                </button>
+
+                <!-- ★ Language Toggle inside sidebar -->
+                <button class="nav-item lang-toggle-item" id="langToggleBtn" title="تبديل اللغة">
+                    <i class="ph-fill ph-globe-hemisphere-west nav-icon"></i>
+                    <span data-i18n="nav_lang_toggle">تبديل اللغة</span>
+                    <div class="lang-toggle-indicator">
+                        <span class="lang-indicator-dot"></span>
+                        <span class="lang-indicator-label" id="langIndicatorLabel">EN</span>
+                    </div>
+                </button>
+
+                <button class="nav-item danger" id="clearBtn" title="مسح المحادثة">
+                    <i class="ph-fill ph-trash nav-icon"></i>
+                    <span data-i18n="nav_clear">مسح المحادثة</span>
+                </button>
+
+                <div class="nav-separator"></div>
+
+                <button class="nav-item about-btn" data-panel="about" title="نبذة عن المشروع">
+                    <i class="ph-fill ph-info nav-icon"></i>
+                    <span data-i18n="nav_about">نبذة عن المشروع</span>
+                </button>
+            </nav>
+
+            <button class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">
+                <i class="ph-bold ph-caret-left" id="sidebarIcon"></i>
+            </button>
+        </aside>
+
+        <!-- ─── Main Content ──────────────────────────────── -->
+        <main class="main-content">
+
+            <!-- ═══ Chat Panel ═══ -->
+            <div class="panel active" id="panel-chat">
+
+
+                <div class="chat-area" id="chatArea">
+                    <div class="welcome" id="welcomeScreen">
+                        <div class="welcome-icon"><img src="/static/assets/logo.png" alt="Human Insight AI Logo"
+                                style="width: 80px; height: 80px; border-radius: 20px; box-shadow: var(--shadow-glow);">
+                        </div>
+                        <h2 data-i18n="welcome_title">Human Insight AI</h2>
+                        <p data-i18n="welcome_desc">لا أكتفي بالرد فقط — بل أفهمك. أحلل نيتك، أكتشف مشاعرك، وأقدم ذكاءً
+                            مبنياً على البصيرة. جرّبني.</p>
+                        <div class="welcome-chips">
+                            <button class="chip"
+                                data-message="ما هو الذكاء الاصطناعي وكيف يمكنه فهم المشاعر البشرية؟"><i
+                                    class="ph-bold ph-robot"></i> <span data-i18n="chip_ai">ما هو الذكاء
+                                    الاصطناعي؟</span></button>
+                            <button class="chip"
+                                data-message="I'm feeling confused about my career path and need some guidance."><i
+                                    class="ph-bold ph-lightbulb"></i> <span data-i18n="chip_career">إرشاد
+                                    مهني</span></button>
+                            <button class="chip" data-message="Analyze the ethical implications of AI in healthcare."><i
+                                    class="ph-bold ph-scales"></i> <span data-i18n="chip_ethics">أخلاقيات الذكاء
+                                    الاصطناعي في الصحة</span></button>
+                            <button class="chip" data-message="أنا أشعر بالإحباط من عدم تحقيق أهدافي، ماذا أفعل؟"><i
+                                    class="ph-bold ph-handshake"></i> <span data-i18n="chip_advice">أحتاج
+                                    نصيحة</span></button>
+                            <button class="chip" data-message="Compare supervised learning vs unsupervised learning."><i
+                                    class="ph-bold ph-microscope"></i> <span data-i18n="chip_ml">مقارنة تعلم
+                                    الآلة</span></button>
+                            <button class="chip" data-message="Explain quantum computing in simple terms."><i
+                                    class="ph-bold ph-book-open"></i> <span data-i18n="chip_quantum">الحوسبة
+                                    الكمية</span></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="message-avatar assistant-avatar"><i data-lucide="brain" width="20" height="20"></i>
+                    </div>
+                    <div class="typing-dots">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+
+                <!-- Document context badge -->
+                <div class="document-context-bar" id="documentContextBar" style="display:none;">
+                    <div class="doc-badge">
+                        <i class="ph-bold ph-file-text" style="font-size:14px"></i>
+                        <span id="docFileName">document.pdf</span>
+                        <span id="docTextLength"></span>
+                        <button class="doc-remove-btn" id="removeDocBtn" title="إزالة المستند">
+                            <i class="ph-bold ph-x" style="font-size:12px"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <div class="input-wrapper">
+                        <!-- Agent Selector Menu -->
+                        <div class="agent-dropdown-container">
+                            <button class="btn-icon btn-agent" id="agentMenuBtn" title="اختر الوكيل الذكي">
+                                <i class="ph-bold ph-users-three"></i>
+                            </button>
+                            <div class="agent-dropdown-menu" id="agentDropdownMenu">
+                                <div class="agent-dropdown-header"><span data-i18n="agent_selector_label">اختر الوكيل
+                                        الذكي</span></div>
+                                <div class="agent-cards-vertical" id="agentCards">
+                                    <!-- Populated by JS -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- File upload button -->
+                        <button class="btn-icon btn-upload" id="uploadBtn" title="رفع مستند (PDF, DOCX, CSV)">
+                            <i class="ph-bold ph-paperclip"></i>
+                        </button>
+                        <input type="file" id="fileInput" accept=".pdf,.docx,.csv" style="display:none">
+
+                        <textarea id="messageInput" placeholder="اكتب رسالتك... بأي لغة 🌍" rows="1"
+                            autofocus></textarea>
+
+                        <!-- Microphone button -->
+                        <button class="btn-icon btn-mic" id="micBtn" title="تحدث بالصوت">
+                            <i class="ph-bold ph-microphone"></i>
+                        </button>
+
+                        <button class="btn-send" id="sendBtn" title="Send message"><i
+                                class="ph-bold ph-paper-plane-tilt"></i></button>
+                    </div>
+                    <div class="status-bar">
+                        <div class="status-dot offline" id="statusDot"></div>
+                        <span id="statusText" data-i18n="status_connecting">جاري الاتصال...</span>
+                        <button class="btn-export btn-export-chat" id="exportChatBtn" title="تصدير المحادثة">
+                            <i class="ph-bold ph-file-pdf" style="font-size:14px"></i>
+                            <span data-i18n="export_chat">تصدير المحادثة</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══ Lab Panel ═══ -->
+            <div class="panel" id="panel-lab">
+                <div class="panel-header">
+                    <div class="panel-header-icon lab"><i class="ph-fill ph-flask" style="font-size:24px"></i></div>
+                    <div>
+                        <h2 data-i18n="lab_title">المختبر التجريبي</h2>
+                        <p class="panel-subtitle" data-i18n="lab_subtitle">اختبر النماذج والأفكار في بيئة آمنة</p>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);">
+                                <i class="ph-fill ph-cpu" style="font-size:24px"></i>
+                            </div>
+                            <h3 data-i18n="lab_text_analysis">تحليل النصوص</h3>
+                            <p data-i18n="lab_text_analysis_desc">تحليل معمّق للنصوص مع استخراج الكيانات والعلاقات</p>
+                            <button class="feature-btn"
+                                onclick="switchToChat('حلل النص التالي تحليلاً معمقاً من حيث المشاعر والنية والسياق')"><span
+                                    data-i18n="lab_text_analysis_btn">تجربة</span><i class="ph-bold ph-arrow-right"
+                                    style="font-size:14px"></i></button>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon" style="background: linear-gradient(135deg, #3b82f6, #60a5fa);">
+                                <i class="ph-fill ph-brain" style="font-size:24px"></i>
+                            </div>
+                            <h3 data-i18n="lab_intelligence">اختبار الذكاء</h3>
+                            <p data-i18n="lab_intelligence_desc">اختبار قدرات النموذج في التفكير والاستدلال المنطقي</p>
+                            <button class="feature-btn"
+                                onclick="switchToChat('اختبر قدراتك في الاستدلال المنطقي: إذا كان كل A هو B وكل B هو C، هل كل A هو C؟ اشرح')"><span
+                                    data-i18n="lab_intelligence_btn">تجربة</span><i class="ph-bold ph-arrow-right"
+                                    style="font-size:14px"></i></button>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon" style="background: linear-gradient(135deg, #06b6d4, #22d3ee);">
+                                <i class="ph-fill ph-magic-wand" style="font-size:24px"></i>
+                            </div>
+                            <h3 data-i18n="lab_creative">توليد إبداعي</h3>
+                            <p data-i18n="lab_creative_desc">توليد نصوص إبداعية وقصائد ومحتوى فني</p>
+                            <button class="feature-btn"
+                                onclick="switchToChat('اكتب لي قصيدة قصيرة عن الذكاء الاصطناعي والمستقبل')"><span
+                                    data-i18n="lab_creative_btn">تجربة</span><i class="ph-bold ph-arrow-right"
+                                    style="font-size:14px"></i></button>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">
+                                <i class="ph-fill ph-shield-check" style="font-size:24px"></i>
+                            </div>
+                            <h3 data-i18n="lab_ethical">تقييم أخلاقي</h3>
+                            <p data-i18n="lab_ethical_desc">فحص النصوص من المنظور الأخلاقي والثقافي</p>
+                            <button class="feature-btn"
+                                onclick="switchToChat('قيّم الأبعاد الأخلاقية لاستخدام الذكاء الاصطناعي في اتخاذ القرارات الطبية')"><span
+                                    data-i18n="lab_ethical_btn">تجربة</span><i class="ph-bold ph-arrow-right"
+                                    style="font-size:14px"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ═══ Sessions Panel ═══ -->
+            <div class="panel" id="panel-sessions">
+                <div class="panel-header">
+                    <div class="panel-header-icon sessions"><i class="ph-fill ph-calendar-dots"
+                            style="font-size:24px"></i>
+                    </div>
+                    <div>
+                        <h2 data-i18n="sessions_title">الجلسات</h2>
+                        <p class="panel-subtitle" data-i18n="sessions_subtitle">سجل جلسات المحادثات والبحث</p>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="sessions-actions">
+                        <button class="btn-primary" onclick="navigateToPanel('chat')"><i class="ph-bold ph-plus"
+                                style="font-size:16px"></i> <span data-i18n="sessions_new_btn">بدء محادثة
+                                جديدة</span></button>
+                        <button class="btn-secondary" id="refreshSessionsBtn"><i class="ph-bold ph-arrows-clockwise"
+                                style="font-size:16px"></i> <span data-i18n="sessions_refresh">تحديث</span></button>
+                    </div>
+                    <div class="sessions-list" id="sessionsList">
+                        <div class="empty-state" id="sessionsEmptyState">
+                            <i class="ph-fill ph-tray" style="font-size:48px"></i>
+                            <h3 data-i18n="sessions_empty">لا توجد جلسات سابقة</h3>
+                            <p data-i18n="sessions_empty_desc">ابدأ محادثة جديدة وستظهر الجلسات هنا</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══ Tables Panel ═══ -->
+            <div class="panel" id="panel-tables">
+                <div class="panel-header">
+                    <div class="panel-header-icon tables"><i class="ph-fill ph-table" style="font-size:24px"></i></div>
+                    <div>
+                        <h2 data-i18n="tables_title">الجداول</h2>
+                        <p class="panel-subtitle" data-i18n="tables_subtitle">تنظيم البيانات والمعلومات في جداول تفاعلية
+                        </p>
+                    </div>
+                    <div class="export-toolbar">
+                        <button class="btn-export" id="exportTableCSVBtn" title="تصدير كـ Excel">
+                            <i class="ph-bold ph-file-xls" style="font-size:15px"></i>
+                            <span data-i18n="export_csv">تصدير Excel</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th data-i18n="th_feature">الميزة</th>
+                                    <th data-i18n="th_description">الوصف</th>
+                                    <th data-i18n="th_status">الحالة</th>
+                                    <th data-i18n="th_priority">الأولوية</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="table-icon"><i class="ph-fill ph-brain"
+                                                style="font-size:14px"></i></span> <span data-i18n="td_intent">تحليل
+                                            النية</span></td>
+                                    <td data-i18n="td_intent_desc">تصنيف تلقائي لنية المستخدم</td>
+                                    <td><span class="status-tag active" data-i18n="tag_active">مفعّل</span></td>
+                                    <td><span class="priority-tag high" data-i18n="tag_high">عالية</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="table-icon"><i class="ph-fill ph-heart"
+                                                style="font-size:14px"></i></span> <span data-i18n="td_emotion">اكتشاف
+                                            المشاعر</span></td>
+                                    <td data-i18n="td_emotion_desc">استشعار الحالة العاطفية</td>
+                                    <td><span class="status-tag active" data-i18n="tag_active">مفعّل</span></td>
+                                    <td><span class="priority-tag high" data-i18n="tag_high">عالية</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="table-icon"><i class="ph-fill ph-translate"
+                                                style="font-size:14px"></i></span> <span data-i18n="td_multilang">دعم
+                                            متعدد اللغات</span></td>
+                                    <td data-i18n="td_multilang_desc">عربي، إنجليزي، فرنسي</td>
+                                    <td><span class="status-tag active" data-i18n="tag_active">مفعّل</span></td>
+                                    <td><span class="priority-tag medium" data-i18n="tag_medium">متوسطة</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="table-icon"><i class="ph-fill ph-lightning"
+                                                style="font-size:14px"></i></span>
+                                        <span data-i18n="td_streaming">استجابة فورية</span>
+                                    </td>
+                                    <td data-i18n="td_streaming_desc">بث مباشر للردود (Streaming)</td>
+                                    <td><span class="status-tag active" data-i18n="tag_active">مفعّل</span></td>
+                                    <td><span class="priority-tag high" data-i18n="tag_high">عالية</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="table-icon"><i class="ph-fill ph-database"
+                                                style="font-size:14px"></i></span> <span data-i18n="td_memory">ذاكرة
+                                            المحادثة</span></td>
+                                    <td data-i18n="td_memory_desc">تخزين السياق لمحادثات أفضل</td>
+                                    <td><span class="status-tag active" data-i18n="tag_active">مفعّل</span></td>
+                                    <td><span class="priority-tag medium" data-i18n="tag_medium">متوسطة</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="table-icon"><i class="ph-fill ph-shield-checkered"
+                                                style="font-size:14px"></i></span> <span data-i18n="td_ethical">تقييم
+                                            أخلاقي</span></td>
+                                    <td data-i18n="td_ethical_desc">مراعاة السياق الثقافي والأخلاقي</td>
+                                    <td><span class="status-tag beta" data-i18n="tag_beta">تجريبي</span></td>
+                                    <td><span class="priority-tag low" data-i18n="tag_low">منخفضة</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══ Analysis & Graphics Panel ═══ -->
+            <div class="panel" id="panel-analysis">
+                <div class="panel-header">
+                    <div class="panel-header-icon analysis"><i class="ph-fill ph-chart-bar" style="font-size:24px"></i>
+                    </div>
+                    <div>
+                        <h2 data-i18n="analysis_title">التحليل و الرسوميات</h2>
+                        <p class="panel-subtitle" data-i18n="analysis_subtitle">تحليل بياني وبصري للمحادثات والنتائج</p>
+                    </div>
+                    <div class="export-toolbar">
+                        <button class="btn-export" id="exportAnalysisPDFBtn" title="تصدير كـ PDF">
+                            <i class="ph-bold ph-file-pdf" style="font-size:15px"></i>
+                            <span data-i18n="export_pdf">تصدير PDF</span>
+                        </button>
+                        <button class="btn-export" id="exportAnalysisCSVBtn" title="تصدير كـ CSV">
+                            <i class="ph-bold ph-file-xls" style="font-size:15px"></i>
+                            <span data-i18n="export_csv">تصدير Excel</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, #7c3aed, #a78bfa);"><i
+                                    class="ph-fill ph-chat-centered-dots" style="font-size:22px"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="totalMessages">0</span>
+                                <span class="stat-label" data-i18n="stat_total">إجمالي الرسائل</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, #10b981, #34d399);"><i
+                                    class="ph-fill ph-smiley" style="font-size:22px"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="positiveCount">0</span>
+                                <span class="stat-label" data-i18n="stat_positive">مشاعر إيجابية</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);"><i
+                                    class="ph-fill ph-smiley-meh" style="font-size:22px"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="neutralCount">0</span>
+                                <span class="stat-label" data-i18n="stat_neutral">مشاعر محايدة</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon" style="background: linear-gradient(135deg, #ef4444, #f87171);"><i
+                                    class="ph-fill ph-smiley-sad" style="font-size:22px"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-value" id="negativeCount">0</span>
+                                <span class="stat-label" data-i18n="stat_negative">مشاعر سلبية</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chart-placeholder">
+                        <div class="chart-bar-group" id="emotionBars">
+                            <div class="chart-bar-item">
+                                <span class="chart-bar-label" data-i18n="chart_positive">إيجابي</span>
+                                <div class="chart-bar-track">
+                                    <div class="chart-bar-fill positive" style="width: 0%" id="barPositive"></div>
+                                </div>
+                                <span class="chart-bar-value" id="barPositiveVal">0%</span>
+                            </div>
+                            <div class="chart-bar-item">
+                                <span class="chart-bar-label" data-i18n="chart_neutral">محايد</span>
+                                <div class="chart-bar-track">
+                                    <div class="chart-bar-fill neutral" style="width: 0%" id="barNeutral"></div>
+                                </div>
+                                <span class="chart-bar-value" id="barNeutralVal">0%</span>
+                            </div>
+                            <div class="chart-bar-item">
+                                <span class="chart-bar-label" data-i18n="chart_negative">سلبي</span>
+                                <div class="chart-bar-track">
+                                    <div class="chart-bar-fill negative" style="width: 0%" id="barNegative"></div>
+                                </div>
+                                <span class="chart-bar-value" id="barNegativeVal">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══ Proofs Panel ═══ -->
+            <div class="panel" id="panel-proofs">
+                <div class="panel-header">
+                    <div class="panel-header-icon proofs"><i class="ph-fill ph-seal-check" style="font-size:24px"></i>
+                    </div>
+                    <div>
+                        <h2 data-i18n="proofs_title">البراهين</h2>
+                        <p class="panel-subtitle" data-i18n="proofs_subtitle">أدلة وبراهين منطقية وعلمية</p>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="proof-cards">
+                        <div class="proof-card">
+                            <div class="proof-number">1</div>
+                            <h3 data-i18n="proof1_title">برهان التحليل الدلالي</h3>
+                            <p data-i18n="proof1_desc">النظام يستخدم نموذج LLM لتحليل البنية الدلالية للنصوص، مما يمكّنه
+                                من فهم المعنى العميق
+                                وليس فقط الكلمات المفردة. هذا مبني على أبحاث معالجة اللغة الطبيعية (NLP).</p>
+                            <div class="proof-tags">
+                                <span class="proof-tag">NLP</span>
+                                <span class="proof-tag">Semantics</span>
+                                <span class="proof-tag">Deep Learning</span>
+                            </div>
+                        </div>
+                        <div class="proof-card">
+                            <div class="proof-number">2</div>
+                            <h3 data-i18n="proof2_title">برهان تصنيف النية</h3>
+                            <p data-i18n="proof2_desc">يُصنّف النظام نية المستخدم إلى 6 فئات (معلوماتي، عاطفي، تحليلي،
+                                أخلاقي، إقناعي، غامض)
+                                باستخدام تقنيات التعلم العميق مع مستوى ثقة قابل للقياس.</p>
+                            <div class="proof-tags">
+                                <span class="proof-tag">Classification</span>
+                                <span class="proof-tag">Confidence Score</span>
+                            </div>
+                        </div>
+                        <div class="proof-card">
+                            <div class="proof-number">3</div>
+                            <h3 data-i18n="proof3_title">برهان اكتشاف المشاعر</h3>
+                            <p data-i18n="proof3_desc">يكتشف النظام 11 حالة عاطفية مختلفة مع تحديد القطبية
+                                (إيجابي/محايد/سلبي) والكثافة
+                                (منخفض/متوسط/عالي) في الوقت الحقيقي.</p>
+                            <div class="proof-tags">
+                                <span class="proof-tag">Emotion Detection</span>
+                                <span class="proof-tag">Polarity</span>
+                                <span class="proof-tag">Real-time</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══ Study Panel ═══ -->
+            <div class="panel" id="panel-study">
+                <div class="panel-header">
+                    <div class="panel-header-icon study"><i class="ph-fill ph-book-open-text"
+                            style="font-size:24px"></i>
+                    </div>
+                    <div>
+                        <h2 data-i18n="study_title">الدراسة</h2>
+                        <p class="panel-subtitle" data-i18n="study_subtitle">مواد دراسية ومصادر تعليمية في الذكاء
+                            الاصطناعي</p>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="study-topics">
+                        <div class="study-card"
+                            onclick="switchToChat('اشرح لي مفهوم الشبكات العصبية الاصطناعية بالتفصيل')">
+                            <div class="study-icon"><i class="ph-fill ph-graph" style="font-size:28px"></i></div>
+                            <div class="study-content">
+                                <h3 data-i18n="study_nn">الشبكات العصبية</h3>
+                                <p data-i18n="study_nn_desc">فهم كيف تعمل الشبكات العصبية الاصطناعية</p>
+                            </div>
+                            <i class="ph-bold ph-caret-left study-arrow" style="font-size:20px"></i>
+                        </div>
+                        <div class="study-card"
+                            onclick="switchToChat('اشرح لي كيف تعمل نماذج اللغة الكبيرة LLM وما هي تقنية Transformer')">
+                            <div class="study-icon"><i class="ph-fill ph-brain" style="font-size:28px"></i></div>
+                            <div class="study-content">
+                                <h3 data-i18n="study_llm">نماذج اللغة الكبيرة</h3>
+                                <p data-i18n="study_llm_desc">LLM و Transformer وكيف تفهم اللغة</p>
+                            </div>
+                            <i class="ph-bold ph-caret-left study-arrow" style="font-size:20px"></i>
+                        </div>
+                        <div class="study-card"
+                            onclick="switchToChat('اشرح لي معالجة اللغة الطبيعية NLP وتطبيقاتها العملية')">
+                            <div class="study-icon"><i class="ph-fill ph-file-text" style="font-size:28px"></i></div>
+                            <div class="study-content">
+                                <h3 data-i18n="study_nlp">معالجة اللغة الطبيعية</h3>
+                                <p data-i18n="study_nlp_desc">NLP وتطبيقاتها في تحليل النصوص</p>
+                            </div>
+                            <i class="ph-bold ph-caret-left study-arrow" style="font-size:20px"></i>
+                        </div>
+                        <div class="study-card"
+                            onclick="switchToChat('اشرح لي أخلاقيات الذكاء الاصطناعي والتحديات الأخلاقية المعاصرة')">
+                            <div class="study-icon"><i class="ph-fill ph-scales" style="font-size:28px"></i></div>
+                            <div class="study-content">
+                                <h3 data-i18n="study_ethics">أخلاقيات الذكاء الاصطناعي</h3>
+                                <p data-i18n="study_ethics_desc">التحديات الأخلاقية والمسؤولية</p>
+                            </div>
+                            <i class="ph-bold ph-caret-left study-arrow" style="font-size:20px"></i>
+                        </div>
+                        <div class="study-card"
+                            onclick="switchToChat('اشرح لي تحليل المشاعر Sentiment Analysis وكيف يعمل')">
+                            <div class="study-icon"><i class="ph-fill ph-heartbeat" style="font-size:28px"></i></div>
+                            <div class="study-content">
+                                <h3 data-i18n="study_sentiment">تحليل المشاعر</h3>
+                                <p data-i18n="study_sentiment_desc">Sentiment Analysis وتقنياته</p>
+                            </div>
+                            <i class="ph-bold ph-caret-left study-arrow" style="font-size:20px"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ═══ About Panel ═══ -->
+            <div class="panel" id="panel-about">
+                <div class="panel-header">
+                    <div class="panel-header-icon about"><i class="ph-fill ph-info" style="font-size:24px"></i></div>
+                    <div>
+                        <h2 data-i18n="about_title">نبذة عن المشروع</h2>
+                        <p class="panel-subtitle" data-i18n="about_subtitle">Human Insight AI — نظام ذكاء معرفي متقدم
+                        </p>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="about-content">
+                        <div class="about-hero">
+                            <img src="/static/assets/logo.png" alt="Logo" class="about-logo">
+                            <h2>Human Insight AI</h2>
+                            <p class="about-tagline" data-i18n="about_tagline">نظام ذكاء اصطناعي معرفي متقدم يفهم النية
+                                البشرية والمشاعر والسياق
+                            </p>
+                        </div>
+
+                        <div class="about-features-grid">
+                            <div class="about-feature">
+                                <i class="ph-fill ph-crosshair" style="font-size:24px"></i>
+                                <h4 data-i18n="about_feat_intent">تصنيف النية</h4>
+                                <p data-i18n="about_feat_intent_desc">تحديد تلقائي لنية المستخدم بدقة عالية</p>
+                            </div>
+                            <div class="about-feature">
+                                <i class="ph-fill ph-heart" style="font-size:24px"></i>
+                                <h4 data-i18n="about_feat_emotion">اكتشاف المشاعر</h4>
+                                <p data-i18n="about_feat_emotion_desc">11 حالة عاطفية مع تحليل القطبية والكثافة</p>
+                            </div>
+                            <div class="about-feature">
+                                <i class="ph-fill ph-globe-hemisphere-west" style="font-size:24px"></i>
+                                <h4 data-i18n="about_feat_multilang">متعدد اللغات</h4>
+                                <p data-i18n="about_feat_multilang_desc">دعم كامل للعربية والإنجليزية والفرنسية</p>
+                            </div>
+                            <div class="about-feature">
+                                <i class="ph-fill ph-lightning" style="font-size:24px"></i>
+                                <h4 data-i18n="about_feat_realtime">استجابة فورية</h4>
+                                <p data-i18n="about_feat_realtime_desc">بث مباشر للردود بدون انتظار</p>
+                            </div>
+                        </div>
+
+                        <div class="about-tech">
+                            <h3><i class="ph-fill ph-cpu" style="font-size:18px"></i> <span
+                                    data-i18n="about_tech_title">التقنيات المستخدمة</span></h3>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">Ollama</span>
+                                <span class="tech-tag">Qwen 2.5</span>
+                                <span class="tech-tag">SSE Streaming</span>
+                                <span class="tech-tag">NLP</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                        </div>
+
+                        <!-- Developer Section -->
+                        <div class="about-developer">
+                            <h3><i class="ph-fill ph-user-circle" style="font-size:18px"></i> <span
+                                    data-i18n="about_dev_title">المطوّر</span></h3>
+                            <div class="developer-card">
+                                <div class="developer-avatar">
+                                    <i class="ph-fill ph-code" style="font-size:28px"></i>
+                                </div>
+                                <div class="developer-info">
+                                    <h4>المهندس عبد الصمد بوركيبات</h4>
+                                    <p class="developer-name-en">Abdessamad Bourkibate</p>
+                                    <p class="developer-role" data-i18n="about_dev_role">مهندس ذكاء اصطناعي ومطوّر
+                                        برمجيات</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certificate Section -->
+                        <div class="about-certificate">
+                            <h3><i class="ph-fill ph-certificate" style="font-size:18px"></i> <span
+                                    data-i18n="about_cert_title">الشهادات</span></h3>
+                            <div class="certificate-card">
+                                <img src="/static/assets/ibm_certificate.jpg"
+                                    alt="IBM Dev Day: AI Demystified Certificate" class="certificate-img">
+                                <div class="certificate-info">
+                                    <h4>IBM Dev Day: AI Demystified</h4>
+                                    <p data-i18n="about_cert_type">شهادة مشاركة</p>
+                                    <p class="certificate-date">January 29 – February 1, 2026</p>
+                                    <div class="certificate-badge">
+                                        <i class="ph-fill ph-seal-check" style="font-size:14px"></i>
+                                        <span>Virtual Event + Hackathon</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="about-footer">
+                            <p data-i18n="about_footer">صُمم وطُوّر بشغف بواسطة المهندس عبد الصمد بوركيبات 💜 — 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+
+</html>
