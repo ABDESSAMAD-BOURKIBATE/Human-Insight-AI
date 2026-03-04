@@ -3,7 +3,7 @@
  * Handles navigation, chat with SSE streaming, translation, and analytics.
  */
 
-const API_BASE = window.location.origin;
+let API_BASE = localStorage.getItem('api_base') || window.location.origin;
 let sessionId = crypto.randomUUID();
 let isLoading = false;
 let currentAgentId = 'default';
@@ -181,6 +181,45 @@ function setupEventListeners() {
                 particlesContainer.appendChild(particle);
             }
         }
+    }
+
+    // Server Settings Modal Logic
+    const serverSettingsBtn = document.getElementById('serverSettingsBtn');
+    const serverSettingsModal = document.getElementById('serverSettingsModal');
+    const closeServerModal = document.getElementById('closeServerModal');
+    const serverUrlInput = document.getElementById('serverUrlInput');
+    const saveServerBtn = document.getElementById('saveServerBtn');
+    const resetServerBtn = document.getElementById('resetServerBtn');
+
+    if (serverSettingsBtn && serverSettingsModal) {
+        serverSettingsBtn.addEventListener('click', () => {
+            serverUrlInput.value = API_BASE;
+            serverSettingsModal.style.display = 'flex';
+        });
+
+        closeServerModal.addEventListener('click', () => {
+            serverSettingsModal.style.display = 'none';
+        });
+
+        saveServerBtn.addEventListener('click', () => {
+            let newUrl = serverUrlInput.value.trim();
+            if (newUrl.endsWith('/')) {
+                newUrl = newUrl.slice(0, -1);
+            }
+            if (newUrl) {
+                API_BASE = newUrl;
+                localStorage.setItem('api_base', newUrl);
+                serverSettingsModal.style.display = 'none';
+                checkHealth(); // Recheck health
+            }
+        });
+
+        resetServerBtn.addEventListener('click', () => {
+            API_BASE = window.location.origin;
+            localStorage.removeItem('api_base');
+            serverSettingsModal.style.display = 'none';
+            checkHealth(); // Recheck health
+        });
     }
 }
 
